@@ -9,5 +9,5 @@ How often a pattern repeats itself is measured in terms of something known as a 
 The aim of this code is to take a differential equation which is a good proxy for a real system. Random fluctuations are introduced by using Python's built-in random number generator. The differential equation is solved and the behavior of the wavenumbers is studied.
 
 ## Definitions
-1. Model equation: $\frac{\partial u}{\partial t} = -\alpha u - \frac{\partial^2 u}{\partial t^2} - \frac{\partial^4 u}{\partial t^2} + \left( \frac{\partial u}{\partial x} \right)^2
+1. Model equation: $\frac{\partial u}{\partial t} = -\alpha u - \frac{\partial^2 u}{\partial t^2} - \frac{\partial^4 u}{\partial t^2} + \left( \frac{\partial u}{\partial x} \right)^2$
 
