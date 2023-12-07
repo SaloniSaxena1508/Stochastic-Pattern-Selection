@@ -21,11 +21,13 @@ The aim of this code is to take a differential equation which is a good proxy fo
 3. The FFT package was used to find the Fourier transforms.
 
 ## Results
-1. The Fourier transform $u_k$ is computed at every time step for all $k$. The $k$ with the maximum power $|u_k|^2$ is noted at each time and called $k_{max}$. After a long time, a histogram of $k_{max}$ is plotted. The wavenumber of the peak of the histogram is then the selected wavenumber. This was done for different $\alpha$. Once such histogram is shown below, along with a plot of the selected wavenumber versus $\alpha$.
+1. The Fourier transform $u_k$ is computed at every time step for all $k$. The $k$ with the maximum power $|u_k|^2$ is noted at each time and called $k_{max}$. After a long time, a histogram of $k_{max}$ is plotted. The wavenumber of the peak of the histogram is then the selected wavenumber. This was done for different $\alpha$. Once such histogram is shown below, along with a plot of the selected wavenumber versus $\alpha$. (Saxena 2019, 2021).
 
 ![sks1](sks1.png)
 ![sks2](sks2.png)
 
 ## References
+1. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 100, 022223 (2019) https://doi.org/10.1103/PhysRevE.100.022223.
+2. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 103, 012205 (2021) https://doi.org/10.1103/PhysRevE.103.012205.
 1. L. Q. Chen, J. Shen, Computer Physics Communications, Vol. 108, 147-158 (1998).
 2. L. N. Trefethen, Spectral Methods in MATLAB, SIAM (Philadelphia 2000).
