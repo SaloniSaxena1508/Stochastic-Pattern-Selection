@@ -13,17 +13,17 @@ The aim of this code is to take a differential equation which is a good proxy fo
 # Technical Details
 ## Definitions
 1. Model equation (SKS equation): $\frac{\partial u}{\partial t} = -\alpha u - \frac{\partial^2 u}{\partial x^2} - \frac{\partial^4 u}{\partial x^4} + \left( \frac{\partial u}{\partial x} \right)^2 + \eta(x,t)$
-2. $\alpha$ is the control parameter. Without noise, when $\alpha > \alpha_c$, the steady solution of the SKS equation is $u(x)=0$. On the other hand, when $\alpha <= \alpha_c$, the steady solution is periodic with wavenumber $k$. 
+2. $\alpha$ is the control parameter. Without noise, when $\alpha > \alpha_c$, the steady solution of the SKS equation is $u(x)=0$. On the other hand, when $\alpha \leq \alpha_c$, the steady solution is periodic with wavenumber $q$. 
 3. When the noise $\eta$ is added, the steady state is a combination of different wavenumbers. The wavenumber corresponding to the maximum of the power spectrum of the solution is the selected wavenumber. The aim is to find it.
 
 ## Methods used
 1. Semi-implicit Euler time-stepping - The SKS equation is converted to Fourier space.
-   $\frac{\partial u_k}{\partial t} = -\alpha u_k - k^2 \alpha - k^4 u_k + \mathcal{N}_k + \eta_k$.   $\mathcal{N}_k$ is the Fourier transform of the nonlinear term. The equation is integrated in time using a Semi-implicit Euler scheme (Chen 1998). The advantage is that the time step in the algorithm is allowed to be much larger than in the explicit Euler case.
+   $\frac{\partial u_q}{\partial t} = -\alpha u_q - q^2 \alpha - k^q u_q + \mathcal{N}_q + \eta_q$.   $\mathcal{N}_q$ is the Fourier transform of the nonlinear term. The equation is integrated in time using a Semi-implicit Euler scheme (Chen 1998). The advantage is that the time step in the algorithm is allowed to be much larger than in the explicit Euler case.
 2. Pseudo-spectral method - In Fourier space, the linear derivative terms in the SKS equation are transformed to simple multiplications, which are much faster to carry out than evaluating derivatives in space. On the other hand, taking the Fourier transform of the nonlinear term involves a convolution which is very computationally expensive. The solution is to calculate the term $\left( \frac{\partial u}{\partial x} \right)^2$ in x - space first and transform it to Fourier space for the next iteration (Trefethen 2000).
 3. The FFT package was used to find the Fourier transforms.
 
-## Results
-1. The Fourier transform $u_k$ is computed at every time step for all $k$. The $k$ with the maximum power $|u_k|^2$ is noted at each time and called $k_{max}$. After a long time, a histogram of $k_{max}$ is plotted. The wavenumber of the peak of the histogram is then the selected wavenumber. This was done for different $\alpha$. Once such histogram is shown below, along with a plot of the selected wavenumber versus $\alpha$. (Saxena 2019, 2021).
+## Results (Refs. 1 and 2)
+1. The Fourier transform $u_q$ is computed at every time step for all $q$. The $q$ with the maximum power $|u_q|^2$ is noted at each time and called $q_{max}$. After a long time, a histogram of $q_{max}$ is plotted. The wavenumber of the peak of the histogram is then the selected wavenumber. This was done for different $\alpha$. Once such histogram is shown below, along with a plot of the selected wavenumber versus $\alpha$. (Saxena 2019, 2021).
 
 ![sks1](sks1.png)
 ![sks2](sks2.png)
@@ -31,5 +31,5 @@ The aim of this code is to take a differential equation which is a good proxy fo
 ## References
 1. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 100, 022223 (2019) https://journals.aps.org/pre/abstract/10.1103/PhysRevE.100.022223
 2. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 103, 012205 (2021) https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.012205
-1. L. Q. Chen, J. Shen, Computer Physics Communications, Vol. 108, 147-158 (1998).
-2. L. N. Trefethen, Spectral Methods in MATLAB, SIAM (Philadelphia 2000).
+3. L. Q. Chen, J. Shen, Computer Physics Communications, Vol. 108, 147-158 (1998).
+4. L. N. Trefethen, Spectral Methods in MATLAB, SIAM (Philadelphia 2000).
