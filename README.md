@@ -27,7 +27,7 @@ The aim of this code is to take a differential equation which is a good proxy fo
 ![sks2](sks2.png)
 
 ## References
-1. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 100, 022223 (2019) https://doi.org/10.1103/PhysRevE.100.022223.
-2. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 103, 012205 (2021) https://doi.org/10.1103/PhysRevE.103.012205.
+1. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 100, 022223 (2019) https://journals.aps.org/pre/abstract/10.1103/PhysRevE.100.022223
+2. S. Saxena, J. M. Kosterlitz, Phys. Rev. E 103, 012205 (2021) https://journals.aps.org/pre/abstract/10.1103/PhysRevE.103.012205
 1. L. Q. Chen, J. Shen, Computer Physics Communications, Vol. 108, 147-158 (1998).
 2. L. N. Trefethen, Spectral Methods in MATLAB, SIAM (Philadelphia 2000).
